@@ -1,3 +1,6 @@
+#Given a 32-bit signed integer, reverse digits of an integer.
+
+#Solution
 class Solution(object):
     def reverse(self, x):
         """

@@ -1,0 +1,14 @@
+# You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the ith customer has in the jth bank.
+Return the wealth that the richest customer has.
+
+#Solution:
+class Solution(object):
+    def maximumWealth(self, accounts):
+        """
+        :type accounts: List[List[int]]
+        :rtype: int
+        """
+        res=[]
+        for x in accounts:
+            res.append(sum(x))
+        return max(res)

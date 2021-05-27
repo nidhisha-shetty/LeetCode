@@ -22,5 +22,5 @@ class Solution(object):
 '''
 Complexities:
 Time Complexity: O(n)
-Space complexity: O(2)
+Space complexity: O(1)
 '''

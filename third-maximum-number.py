@@ -22,5 +22,5 @@ class Solution(object):
  
 '''
 Complexities:
-Space complexity: O(n)
+Space complexity: O(n) #the size of array, arr is dependent on size of nums, hence O(n)
 '''

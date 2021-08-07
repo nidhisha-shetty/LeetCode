@@ -9,13 +9,13 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        count=0
-        for num in range(2,n):
-            for x in range(2,num):
-                if num%x==0:                    
-                    # print("not a prime")
-                    break
-            else:
-                print(num)
-                count+=1                   
-        return count
+        if n<2:
+            return 0
+        else:
+            li=[1]*n
+            li[0]=li[1]=0
+            for i in range(2, int(n**0.5)+1):
+                if li[i]:
+                    for j in range(i*i,n,i):
+                        li[j]=0
+            return sum(li)

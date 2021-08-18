@@ -11,3 +11,5 @@ class Solution:
             if n%x==0:
                 sum+=1
         return sum==3
+    
+#Timecomplexity: O(n)

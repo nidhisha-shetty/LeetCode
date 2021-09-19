@@ -6,9 +6,9 @@ Return the letter that was added to t.
 #Solution:
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
-        s=sorted(s)
-        t=sorted(t)
-        for x in range(len(s)):
-            if s[x]!=t[x]:
-                return s[x]
-        return t[x+1]
+        t=list(t)
+        for x in s:
+            if x in t:
+                t.remove(x)
+        if len(t)!=0:
+            return t[-1]

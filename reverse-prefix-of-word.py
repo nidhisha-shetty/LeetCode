@@ -7,3 +7,4 @@ class Solution:
                 res=word[x::-1]+word[x+1:]
                 return res
                 break
+        return word

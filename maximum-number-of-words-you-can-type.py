@@ -9,12 +9,11 @@ return the number of words in text you can fully type using this keyboard.
 class Solution:
     def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
         words=text.split(' ')
-        count=0
         res=0
-        for x in brokenLetters:
-            if x in words[count]:
-                continue
+        for word in words:    
+            for char in brokenLetters:
+                if char in word:
+                    break
             else:
                 res+=1
-            count+=1
         return res

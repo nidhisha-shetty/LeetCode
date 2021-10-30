@@ -13,7 +13,6 @@ class Solution(object):
         :rtype: List[int]
         """    
         res=[]
-        # comb_list=[]
         comb_list=nums1+nums2+nums3
         for x in list(comb_list):
             if (x in nums1 and x in nums2) or (x in nums2 and x in nums3) or (x in nums1 and x in nums3):

@@ -11,16 +11,13 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        res=[]
-        res.append(s[0])
-        s=list(s)
-        x=1
-        while x<len(s):
-            print(x)
-            if s[x]==res[-1]:
-                del(s[x])
-                del(res[-1])                
+        stack=[]
+        for x in s:
+            if len(stack)==0:
+                stack.append(x)
+            elif stack[-1]!=x:
+                stack.append(x)
             else:
-                res.append(s[x])
-                x+=1
-        return res
+                stack.pop()
+        return ''.join(stack)
+               

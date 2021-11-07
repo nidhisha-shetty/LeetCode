@@ -12,7 +12,7 @@ class Solution(object):
         """
         res=0
         for x in range(len(nums)):
-            for y in range(x,len(nums)):
-                if abs(x-y)==k:
+            for y in range(len(nums)):
+                if nums[x]>nums[y] and abs(nums[x]-nums[y])==k:
                     res+=1
         return res

@@ -11,8 +11,8 @@ class Solution(object):
         :rtype: int
         """
         res=0
-        for x in range(len(nums)):
-            for y in range(len(nums)):
-                if nums[x]>nums[y] and abs(nums[x]-nums[y])==k:
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if abs(nums[i]-nums[j])==k:
                     res+=1
         return res

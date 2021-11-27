@@ -11,11 +11,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[str]
         """
-        res=[str(nums[0])]
-        for x in range(max(nums)+1):
-            if x in nums:
-                pass
-            else:
-                res.append("->"+str(x-1)+","+str(x+1))
+        res=[]
+        begin=0
+        for x in range(len(nums)):
+            if x+1>=len(nums) or nums[x+1]-nums[x]!=1:
+                print(x+1)
+                if nums[begin]!=nums[x]: 
+                    res.append(str(nums[begin])+"->"+str(nums[x]))
+                else:
+                    res.append(str(nums[begin]))
+
+                begin = x+1
         return res
 

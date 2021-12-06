@@ -7,14 +7,19 @@ No two characters may map to the same character, but a character may map to itse
 
 #Solution:
 class Solution(object):
-    def isIsomorphic(self, s, t):
+     def isIsomorphic(self, s, t):
         """
         :type s: str
         :type t: str
         :rtype: bool
         """
-        
-        if len(set(s))==len(set(t)):
-            return True
-        else:
-            return False
+        di={}
+        if len(s)==len(t):
+            for x in range(len(s)):
+                if s[x] in di and di[s[x]]==t[x]:
+                    pass
+                elif s[x] in di and di[s[x]]!=t[x]:
+                    return False
+                else:   
+                    di[s[x]]=t[x]
+        return True

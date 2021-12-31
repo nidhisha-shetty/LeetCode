@@ -23,5 +23,8 @@ class Solution(object):
             if x == check:
                 left+=1
             else:
-                right+=1
+                if left > 0:
+                    left -= 1
+                else:
+                    right+=1
         return abs(left-right)

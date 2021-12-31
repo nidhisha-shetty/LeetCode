@@ -20,6 +20,8 @@ class Solution(object):
                     pass
                 elif s[x] in di and di[s[x]]!=t[x]:
                     return False
+                elif t[x] in di.values():
+                    return False
                 else:   
                     di[s[x]]=t[x]
         return True

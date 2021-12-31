@@ -26,5 +26,5 @@ class Solution(object):
                 if left > 0:
                     left -= 1
                 else:
-                    right+=1
-        return abs(left-right)
+                    right += 1
+        return left + right

@@ -12,18 +12,16 @@ class Solution(object):
         """
         :type n: int
         :rtype: bool
-        """
-        str_num=str(n)
-        if str_num > 9:
-            len_size = len(str(str_num))
-            num_sum=0
-            for x in range(len_size):
-                num=''
-                
-                sq_num = int(str_num[x]) ** 2
-                num_sum+=sq_num
-                
-                print(num_sum)
-                num=num_sum
-                if num >9:
-                    pass
+        """ 
+        num = str(n)
+        num_size = len(str(num))
+        sum = 0
+        for x in range(num_size):
+            sum += x ** 2
+        if len(str(sum)) > 1:
+            isHappy(sum)
+        else:
+            if sum != 1:
+                return False
+            else:
+                return True  

@@ -12,16 +12,15 @@ class Solution(object):
         """
         :type n: int
         :rtype: bool
-        """ 
-        num = str(n)
-        num_size = len(str(num))
-        sum = 0
-        for x in range(num_size):
-            sum += x ** 2
-        if len(str(sum)) > 1:
-            isHappy(sum)
-        else:
-            if sum != 1:
-                return False
+        """
+        def check(num):
+            num = str(num)
+            num_size = len(str(num))
+            summ = 0            
+            for x in range(num_size):
+                summ += int(num[x]) ** 2
+            if str(summ) != '1':
+                return check(summ)
             else:
-                return True  
+                return True
+        return check(n) 

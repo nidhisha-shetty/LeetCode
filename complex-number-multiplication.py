@@ -15,9 +15,17 @@ class Solution(object):
         :type num2: str
         :rtype: str
         """
-        num1_split = list(num1.split("+"))
-        num2_split = list(num2.split("+"))
-
+        
+        check_sign=0
+        if "+" in str(num1) and '-' not in str(num1) and "+" in str(num2) and '-' not in str(num2):
+            check_sign=True
+            num1_split = list(num1.split("+"))
+            num2_split = list(num2.split("+"))
+            
+        elif "+-" in num1 and '-' in str(num1) and "+-" in num2 and '-' in str(num2):
+            num1_split = list(num1.split("+-"))
+            num2_split = list(num2.split("+-"))
+            
         a = int(num1_split[0])
         b = int(num1_split[1][0])
         x = int(num2_split[0])

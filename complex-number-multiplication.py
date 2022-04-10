@@ -15,24 +15,8 @@ class Solution(object):
         :type num2: str
         :rtype: str
         """
-        
         check_sign=0
-        if "+" in str(num1) and '-' not in str(num1) and "+" in str(num2) and '-' not in str(num2):
-            check_sign=True
-            num1_split = list(num1.split("+"))
-            num2_split = list(num2.split("+"))
-            
-        elif "+-" in num1 and '-' in str(num1) and "+-" in num2 and '-' in str(num2):
-            num1_split = list(num1.split("+-"))
-            num2_split = list(num2.split("+-"))
-            
-        a = int(num1_split[0])
-        b = int(num1_split[1][0])
-        x = int(num2_split[0])
-        y = int(num2_split[1][0])
-
-        res1 = (a*x)-(b*y)
-        res2 = (a*y)+(b*x)
-        res2 = "+"+str(res2)+"i"
-       
-        return str(res1)+str(res2)
+        num1 = [int(x) for x in num1.replace('i','').split('+')]
+        num2 = [int(x) for x in num2.replace('i','').split('+')]
+        res = str(num1[0] * num2[0] -  num1[1] * num2[1]) + "+" + str(num1[0] * num2[1] +  num1[1] * num2[0])+"i"
+        return res

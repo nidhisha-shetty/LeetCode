@@ -13,17 +13,15 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-        x=1
+        new_li = []
         li = []
         for char in arr:
-            char = str(char)
-            x+=1
-            if char not in li:
-                li.append(char)
-            else:
-                li.remove(char)
-        if len(li) < k:
+            li.append(arr.count(char))
+        for x in range(len(li)):
+            if li[x] == 1:
+                new_li.append(arr[x])
+        print(new_li)
+        if len(new_li) < k:
             return ''
         else:
-            return li[k-1]
-
+            return new_li[k-1]

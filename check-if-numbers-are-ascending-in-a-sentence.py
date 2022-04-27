@@ -18,14 +18,11 @@ class Solution(object):
         num1 = []
         for token in nums:
             if token.isdigit():
-                num1.append(token)
-        x, y = 0, 1
-        for x in range(len(num1)):
-            if num1[x] <= num1[y]:
-                x+=1
-                y+=1
-        if  y == len(num1):
+                num1.append(int(token))
+        backup_num1 = num1
+        num1.sort()
+        if backup_num1==num1:
             return True
-        else: 
+        else:
             return False
         

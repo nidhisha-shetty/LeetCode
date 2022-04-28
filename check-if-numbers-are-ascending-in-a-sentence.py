@@ -19,10 +19,10 @@ class Solution(object):
         for token in nums:
             if token.isdigit():
                 num1.append(int(token))
-        backup_num1 = num1
-        num1.sort()
-        if backup_num1==num1:
-            return True
-        else:
-            return False
-        
+        flag = 0
+        i = 1
+        while i < len(num1):
+            if(num1[i] <= num1[i - 1]):
+                return False
+            i += 1
+        return True

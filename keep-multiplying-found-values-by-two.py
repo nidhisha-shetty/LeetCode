@@ -18,9 +18,6 @@ class Solution(object):
         :type original: int
         :rtype: int
         """
-        if original in nums:
-            pos = nums.index(original) 
-            pos = original * 2
-            original = original * 2
-        else:
-            return original
+        while original in nums:
+            original = original * 2        
+        return original

@@ -7,12 +7,14 @@ The returned string should only have a single space separating the words. Do not
 '''
 
 #Solution:
+import re
 class Solution(object):
     def reverseWords(self, s):
         """
         :type s: str
         :rtype: str
         """
+        s = re.sub(' +', ' ', s)
         new_s = ''
         li = s.split(' ')
         li=li[::-1]

@@ -22,3 +22,19 @@ class Solution(object):
             new_s+=x
             new_s+=' '            
         return new_s.strip()
+
+#Solution2:
+class Solution(object):
+    def reverseWords(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        s = " ".join(s.split())
+        new_s = ''
+        li = s.split(' ')
+        li=li[::-1]
+        for x in li:
+            new_s+=x
+            new_s+=' '            
+        return new_s.strip()

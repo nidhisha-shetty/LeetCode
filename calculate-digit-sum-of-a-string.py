@@ -18,12 +18,17 @@ class Solution(object):
         rem = len(s) % 3 
         if rem != 0:
             div = s[:-rem]
-            not_div = s[-rem:-1]
+            not_div = s[-rem:]
             x=0
-            sum=0
+            summ=0
+            temp_sum = 0
             while x+3 <= len(div):
-                temp_sum = sum(s[x:x+3])
-                sum+=temp_sum
+                add_three=x+3
+                while x<add_three:
+                    temp_sum += int(div[x])
+                    x=x+1
                 x=x+3
-            sum+=sum(not_div)
-        return sum
+            for  num in range(len(not_div)):
+                temp_sum += int(not_div[num])
+            summ+=temp_sum
+        return summ

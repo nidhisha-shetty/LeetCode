@@ -15,20 +15,23 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-        rem = len(s) % 3 
-        if rem != 0:
+        while len(s) > k:
+            rem  = len(s) % k
             div = s[:-rem]
-            not_div = s[-rem:]
-            x=0
-            summ=0
-            temp_sum = 0
-            while x+3 <= len(div):
-                add_three=x+3
-                while x<add_three:
-                    temp_sum += int(div[x])
-                    x=x+1
-                x=x+3
-            for  num in range(len(not_div)):
-                temp_sum += int(not_div[num])
-            summ+=temp_sum
-        return summ
+            non_div = s[-rem:]
+            div_sum=[]
+            start = 0
+            while start < len(div):
+                num=0
+                for elem in range(start, start+k):
+                    num += int(div[elem])
+                div_sum.append(num)
+                start+=k
+
+            print(div_sum)
+            non_div_sum = 0
+            for num in non_div:
+                non_div_sum += int(num)
+            div_sum.append(non_div_sum)
+            s = div_sum
+        return ''.join(str(x) for x in s) 

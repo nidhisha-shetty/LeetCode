@@ -13,12 +13,12 @@ class Solution(object):
         :type title: str
         :rtype: str
         """
-        res_li = []
-        li_title = title.split(' ')
-        for word in li_title:
-            if len(word)<3:
+        res = ''
+        title = title.split(' ')
+        for word in title:
+            if len(str(word)) < 3:
                 word = word.lower()
             else:
-                word = word.capitalize()
-            res_li.append(word)
-        return ' '.join(res_li)
+                word = str(word).capitalize()
+            res+=word+' '
+        return res.strip()

@@ -16,22 +16,8 @@ class Solution(object):
         :rtype: str
         """
         while len(s) > k:
-            rem  = len(s) % k
-            div = s[:-rem]
-            non_div = s[-rem:]
-            div_sum=[]
-            start = 0
-            while start < len(div):
-                num=0
-                for elem in range(start, start+k):
-                    num += int(div[elem])
-                div_sum.append(num)
-                start+=k
-
-            print(div_sum)
-            non_div_sum = 0
-            for num in non_div:
-                non_div_sum += int(num)
-            div_sum.append(non_div_sum)
-            s = div_sum
-        return ''.join(str(x) for x in s) 
+            temp = ''
+            for x in range(0, len(s), k):
+                temp += str(sum(int(j) for j in s[x:x+k]))
+            s = temp
+        return s

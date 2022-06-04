@@ -12,12 +12,12 @@ Given a string word, return true if the usage of capitals in it is right.
 class Solution:
     def detectCapitalUse(self, word: str) -> bool:
         count = 0
-        for letter in word:
-            if letter.isupper() and count != 0:
-                if word.isupper():
-                    return True
-                else:
+        if word.isupper() or word.islower():
+            return True
+        else:
+            for letter in word:
+                if letter.isupper() and count != 0:
                     return False
-            else:
-                count+=1
+                else:
+                    count+=1
         return True

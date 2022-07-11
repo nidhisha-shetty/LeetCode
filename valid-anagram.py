@@ -23,8 +23,6 @@ class Solution(object):
                 di2[letter]+=1
             else:
                 di2[letter]=1        
-        print(di1)
-        print(di2)
         if di1 == di2:
             return True
         else:

@@ -3,24 +3,17 @@ P.S: Given integer array nums, return the third maximum number in this array. If
 '''
 
 #Solution: 
-class Solution(object):
-    def thirdMax(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        arr=[]
-        for x in range(len(nums)):
-            if nums[x] not in arr:
-                arr.append(nums[x])
-        if len(arr)>=3:
-            for x in range(2):
-                arr.remove(max(arr))
-            return max(arr)
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        nums_sort = sorted(set(nums))       
+        if len(nums_sort)>3:
+            return nums_sort[-3]
+        elif len(nums_sort) == 3:
+            return nums_sort[0]
         else:
-            return max(arr)
+            return max(nums_sort)
  
 '''
 Complexities:
-Space complexity: O(n) #the size of array, arr is dependent on size of nums, hence O(n)
+Space complexity: O(n) #the size of array, nums_sort is dependent on size of nums, hence O(n)
 '''

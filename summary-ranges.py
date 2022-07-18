@@ -11,16 +11,25 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[str]
         """
-        res=[]
-        begin=0
-        for x in range(len(nums)):
-            if x+1>=len(nums) or nums[x+1]-nums[x]!=1:
-                print(x+1)
-                if nums[begin]!=nums[x]: 
-                    res.append(str(nums[begin])+"->"+str(nums[x]))
+        if len(nums)>0:
+            start=0
+            end=0
+            ranges=[]
+            for i in range(len(nums)-1):
+                if nums[i+1]-nums[i]==1:
+                    end+=1
                 else:
-                    res.append(str(nums[begin]))
-
-                begin = x+1
-        return res
+                    if start==end:
+                        ranges.append(str(nums[start]))
+                    else:
+                        ranges.append(str(nums[start])+"->"+str(nums[end]))
+                    end+=1
+                    start=end
+            if start!=end:
+                ranges.append(str(nums[start])+"->"+str(nums[end]))
+            else:
+                ranges.append(str(nums[start]))
+            return ranges
+        else:
+            return nums
 

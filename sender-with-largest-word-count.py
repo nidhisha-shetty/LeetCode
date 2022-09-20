@@ -22,6 +22,11 @@ class Solution:
                 di[senders[x]]+=msg[x]
             else:
                 di[senders[x]]=msg[x]
+        # res = max(di, key=di.get)
+        # print(res)
+        res=[]
         for x in di:
             if di[x]==max(di.values()):
-                return x        
+                res.append(x)
+        res.sort()        
+        return res[-1]

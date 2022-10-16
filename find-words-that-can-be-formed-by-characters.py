@@ -14,13 +14,10 @@ class Solution(object):
         """
         res = 0
         for word in words:
-            i = 0
+            li=[]
             for char in word:
-                if char in chars:
-                    if len(word)-1 == i:
-                        res+=len(word)
-                    else:
-                        i += 1
-                else:
-                    break
+                if word.count(char) > chars.count(char):
+                    li.append(char)
+            if len(li)==0:
+                res+=len(word)
         return res

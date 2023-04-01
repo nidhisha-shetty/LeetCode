@@ -38,3 +38,17 @@ class Solution(object):
         for x in nums:
           ans.append(x)
         return ans
+
+#Solution 4:
+class Solution(object):
+    def getConcatenation(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        ans = []
+        nums_len = len(nums)
+        while len(ans) < 2*len(nums):
+            for elem in nums:
+                ans.append(elem)
+        return ans   

@@ -4,7 +4,7 @@ Return the minimum number of steps to make t an anagram of s.
 An Anagram of a string is a string that contains the same characters with a different (or the same) ordering.
 '''
 
-#Solution:
+#Solution1:
 class Solution(object):
     def minSteps(self, s, t):
         """
@@ -32,4 +32,25 @@ class Solution(object):
                     res += diff
             else:
                 res += di_s[char]
+        return res
+
+#Solution2:
+from collections import Counter
+class Solution(object):
+    def minSteps(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: int
+        """
+        res = 0
+        t_set = set(str(t))
+        s_di = dict(Counter(s))
+        t_di = dict(Counter(t))
+        for char in t_set:
+            if char in s_di:
+                if t_di[char] > s_di[char]:
+                    res += t_di[char] - s_di[char]
+            else:
+                res += t_di[char]
         return res

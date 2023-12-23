@@ -1,1 +1,16 @@
-
+from collections import Counter
+class Solution(object):
+    def equalFrequency(self, word):
+        """
+        :type word: str
+        :rtype: bool
+        """
+        word_di = Counter(word)
+        for i in word_di:
+            word_di[i] -= 1
+            if word_di[i]==0:
+                word_di.pop(i)    
+            if len(set(word_di.values())) == 1:
+                return True
+            word_di[i] += 1
+        return False

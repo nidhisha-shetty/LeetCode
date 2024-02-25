@@ -1,0 +1,12 @@
+from collections import Counter
+class Solution(object):
+    def uniqueOccurrences(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        di = dict(Counter(arr))
+        if len(set(di.values())) == len(di):
+            return True
+        else:
+            return False
